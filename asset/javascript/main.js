@@ -22,50 +22,45 @@ const text = [
      'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
-let contatore = 0
-const segnaIndice = items[contatore] 
+
+const segnaIndice = items[2]
 const selezione = document.getElementById("container_immagine_grande")
 //console.log(arrayvar)
 //console.log(selezione) 
+console.log(segnaIndice)
 
 
-selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndice}') ;" ></div>`) 
+for(items.length=0 ; items.length<=5 ; items.length++ ){
 
-for(contatore=0; contatore<=4 ; contatore++){
-
+     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndice}') ;" ></div>`)      
      
-     document.querySelector(".fa-chevron-circle-up").addEventListener("click", frecciaSuperiore) 
-     document.querySelector(".fa-chevron-circle-down").addEventListener("click", frecciaInferiore) 
-     
-     function frecciaSuperiore(){
-          if (contatore=0){
-               contatore=4
-          }
-          else {
-               contatore--
-          }
-     }
-
-     function frecciaInferiore(){
-          if (contatore=4){
-                contatore=0
-          }
-
-          else {
-                contatore++  
-          }
-     }
-
-     
-     document.querySelector(".immagine_principale").style.backgroundImage="url('./asset/img/${segnaIndice}')"
+    
 
 }
      
      
 
+document.getElementById("su").addEventListener("click", frecciaSuperiore) 
+document.getElementById("giù").addEventListener("click", frecciaInferiore) 
 
+function frecciaSuperiore(){
+     if (items.length=0){
+          items.length=5
+     }
+     
+}
 
+function frecciaInferiore(){
+     if (items.length=5){
+          items.length=0
+     }
 
+     
+}
+
+     
+
+     
 
 
 
