@@ -27,11 +27,11 @@
 }
 
 .fa-chevron-circle-up{
-     padding-top: 50px;   
+     margin: 50px 0;    
 }
 
 .fa-chevron-circle-down{
-     padding-bottom: 50px;   
+     margin: 50px 0;  
 }
 
 .immagine_principale{
@@ -39,13 +39,34 @@
      height: 100%;
 }
 
-#immagine_01{
-     background-image: url("../img/01.jpg");
-}
 
 .immagini_carosello{
      height: calc(100% / 5);
      background-position: center ;
 }
+
+#immagine_01{
+     background-image: url("../img/01.jpg");
+}
+
+#immagine_02{
+     background-image: url("../img/02.jpg");
+}
+
+#immagine_03{
+     background-image: url("../img/03.jpg");
+}
+
+#immagine_04{
+     background-image: url("../img/04.jpg");
+}
+
+#immagine_05{
+     background-image: url("../img/05.jpg");
+}
+
+
+
+
 
 
