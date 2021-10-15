@@ -1,0 +1,51 @@
+
+*{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+}
+
+.container{
+     display: flex;
+     height: 80vh;
+}
+
+.container_immagine_grande{
+     width: 80%;
+     background-color: beige;
+}
+
+.container_immagini_piccole{
+     height: 80vh;
+     width: 20%;
+     background-color: blueviolet;
+}
+
+.fas{
+     text-align: center;
+     width: 100%;
+}
+
+.fa-chevron-circle-up{
+     padding-top: 50px;   
+}
+
+.fa-chevron-circle-down{
+     padding-bottom: 50px;   
+}
+
+.immagine_principale{
+     background-size: cover;
+     height: 100%;
+}
+
+#immagine_01{
+     background-image: url("../img/01.jpg");
+}
+
+.immagini_carosello{
+     height: calc(100% / 5);
+     background-position: center ;
+}
+
+
