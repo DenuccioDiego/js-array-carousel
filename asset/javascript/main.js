@@ -1,9 +1,9 @@
 const items = [
-     'img/01.jpg',
-     'img/02.jpg',
-     'img/03.jpg',
-     'img/04.jpg',
-     'img/05.jpg'
+     '01.jpg',
+     '02.jpg',
+     '03.jpg',
+     '04.jpg',
+     '05.jpg'
 ];
 
 const title = [
@@ -22,7 +22,12 @@ const text = [
      'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
+const arrayvar = items[0]
+const selezione = document.getElementById("container_immagine_grande")
+console.log(arrayvar)
+console.log(selezione)
 
+selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url("../img/${arrayvar}");" ></div>`) 
 
 
 

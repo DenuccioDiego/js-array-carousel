@@ -10,7 +10,7 @@
      height: 80vh;
 }
 
-.container_immagine_grande{
+#container_immagine_grande{
      width: 80%;
      background-color: beige;
 }
