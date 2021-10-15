@@ -22,12 +22,12 @@ const text = [
      'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
-const arrayvar = items[0]
+const arrayvar = items[0] 
 const selezione = document.getElementById("container_immagine_grande")
 console.log(arrayvar)
-console.log(selezione)
+console.log(selezione) 
 
-selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url("../img/${arrayvar}");" ></div>`) 
+selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${arrayvar}') ;" ></div>`) 
 
 
 
