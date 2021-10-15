@@ -22,30 +22,30 @@ const text = [
      'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
-
-const segnaIndice = items[2]
+let contatore = 0
+const segnaIndice = items[contatore]
 const selezione = document.getElementById("container_immagine_grande")
 //console.log(arrayvar)
 //console.log(selezione) 
 console.log(segnaIndice)
 
+document.getElementById("su").addEventListener("click", frecciaSuperiore) 
+document.getElementById("giù").addEventListener("click", frecciaInferiore) 
+selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndice}') ;" ></div>`)
+for(contatore=0 ; contatore<=5 ; contatore++ ){
 
-for(items.length=0 ; items.length<=5 ; items.length++ ){
-
-     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndice}') ;" ></div>`)      
-     
+     document.getElementById("vuoto").setAttribute("id", "immagine_05")
     
 
 }
      
-     
-
-document.getElementById("su").addEventListener("click", frecciaSuperiore) 
-document.getElementById("giù").addEventListener("click", frecciaInferiore) 
 
 function frecciaSuperiore(){
      if (items.length=0){
           items.length=5
+     }
+     else{
+          contatore=items.length-2
      }
      
 }
@@ -54,11 +54,13 @@ function frecciaInferiore(){
      if (items.length=5){
           items.length=0
      }
-
+     else{
+          contatore=items.length-1
+     }
      
 }
 
-     
+console.log(items.length)    
 
      
 
