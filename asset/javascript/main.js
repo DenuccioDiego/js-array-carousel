@@ -23,18 +23,34 @@ const text = [
 ];
 
 let contatore = 0
-let segnaIndice = items[contatore]
+let segnaIndiceImmagine = items[contatore]
+let segnaIndiceTitolo = title[contatore]
+let segnaIndiceTesto = text[contatore]
+
+
+
 let selezione = document.getElementById("container_immagine_grande")
 let cancello = document.querySelector('.immagine_principale')
+let selectionImmaginiPiccole = document.querySelector(".container_immagini_piccole")
+//console.log(selectionImmaginiPiccole)
+
+
+     
+     
+     for ( contatore=0; contatore<=items.length-1; contatore++ ){
+          segnaIndiceImmagine = items[contatore]
+          selectionImmaginiPiccole.insertAdjacentHTML("beforeend", `<div class="immagini_carosello" style="background-image: url('./asset/img/${segnaIndiceImmagine}') ;" ></div>`) 
+     }
+
 
 //console.log(cancello)
 //console.log(arrayvar)
 //console.log(selezione) 
 
-
      //console.log(contatore)
-     
-     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndice}') ;" ></div>`)
+     contatore = 0
+     segnaIndiceImmagine = items[contatore]
+     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndiceImmagine}') ;" >  <div class="descrizione_immagine"><div class=""><h2>${segnaIndiceTitolo}</h2><span>${segnaIndiceTesto}</span></div></div> </div>`)
      document.getElementById("su").addEventListener("click", frecciaSuperiore) 
      document.getElementById("giù").addEventListener("click", frecciaInferiore)
      
@@ -50,14 +66,15 @@ function frecciaSuperiore(){
           contatore=contatore-1
      }
      
-     segnaIndice = items[contatore]
+     segnaIndiceImmagine = items[contatore]
+     segnaIndiceTitolo = title[contatore]
+     segnaIndiceTesto = text[contatore]
      //console.log(segnaIndice)
      //console.log(contatore)
-     //document.querySelector('.immagine_principale').remove
      
      //console.log(cancello)
      cancello = document.querySelector('.immagine_principale').remove()
-     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndice}') ;" ></div>`)
+     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndiceImmagine}') ;" >  <div class="descrizione_immagine"><div class=""><h2>${segnaIndiceTitolo}</h2><span>${segnaIndiceTesto}</span></div></div> </div>`)
      //console.log(contatore)
      
 }
@@ -71,10 +88,12 @@ function frecciaInferiore(){
           contatore++
      }
      
-     segnaIndice = items[contatore]
+     segnaIndiceImmagine = items[contatore]
+     segnaIndiceTitolo = title[contatore]
+     segnaIndiceTesto = text[contatore]
+
      cancello = document.querySelector('.immagine_principale').remove()
-     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" id="svuoto" style="background-image: url('./asset/img/${segnaIndice}') ;" ></div>`)
-     
+     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndiceImmagine}') ;" >  <div class="descrizione_immagine"><div class=""><h2>${segnaIndiceTitolo}</h2><span>${segnaIndiceTesto}</span></div></div> </div>`)
      //console.log(contatore)
      
 }

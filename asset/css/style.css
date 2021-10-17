@@ -7,7 +7,9 @@
 
 .container{
      display: flex;
-     height: 80vh;
+     height: 500px;
+     width: 1200px;
+     
 }
 
 #container_immagine_grande{
@@ -16,9 +18,9 @@
 }
 
 .container_immagini_piccole{
-     height: 80vh;
      width: 20%;
      background-color: blueviolet;
+     position: relative;
 }
 
 .fas{
@@ -27,11 +29,11 @@
 }
 
 .fa-chevron-circle-up{
-     margin: 50px 0;    
+       
 }
 
 .fa-chevron-circle-down{
-     margin: 50px 0;  
+      
 }
 
 .immagine_principale{
@@ -39,37 +41,42 @@
      background-repeat: no-repeat;
      height: 100%;
      background-position: center ;
+     position: relative;
      
 }
 
 
+.descrizione_immagine{
+     position: absolute;
+     right: 0;
+     bottom: 0;
+     text-align: end;
+     padding: 2rem;
+     color: white;
+}
+
 .immagini_carosello{
      height: calc(100% / 5);
      background-position: center ;
+     filter: brightness(0.55);
+     
 }
 
-#immagine_01{
-     background-image: url("../img/01.jpg");
+#illuminata{
+     filter: brightness(1) ;
 }
 
-#immagine_02{
-     background-image: url("../img/02.jpg");
+#su{
+     position: absolute;
+     top: 5%;
+     left: 50%;
+     z-index: 1;
 }
 
-#immagine_03{
-     background-image: url("../img/03.jpg");
+#giù{
+     position: absolute;
+     bottom: 5%;
+     left: 50%;
+     z-index: 1;
+
 }
-
-#immagine_04{
-     background-image: url("../img/04.jpg");
-}
-
-#immagine_05{
-     background-image: url("../img/05.jpg");
-}
-
-
-
-
-
-
