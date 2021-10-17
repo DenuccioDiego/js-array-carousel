@@ -44,7 +44,7 @@ function frecciaSuperiore(){
      
      //console.log(contatore)  
      if(contatore<=0){
-          contatore=4
+          contatore=items.length-1
      }
      else{
           contatore=contatore-1
@@ -64,7 +64,7 @@ function frecciaSuperiore(){
 
 function frecciaInferiore(){
      
-     if(contatore>=4){
+     if(contatore>=items.length-1){
           contatore=0
      }
      else{
