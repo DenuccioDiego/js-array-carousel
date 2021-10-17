@@ -22,83 +22,82 @@ const text = [
      'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
-let contatore = 0
-let segnaIndiceImmagine = items[contatore]
-let segnaIndiceTitolo = title[contatore]
-let segnaIndiceTesto = text[contatore]
+let contatore = 0;
+let segnaIndiceImmagine = items[contatore];
+let segnaIndiceTitolo = title[contatore];
+let segnaIndiceTesto = text[contatore];
 
 
 
-let selezione = document.getElementById("container_immagine_grande")
-let cancello = document.querySelector('.immagine_principale')
-let selectionImmaginiPiccole = document.querySelector(".container_immagini_piccole")
-//console.log(selectionImmaginiPiccole)
+let selezione = document.getElementById("container_immagine_grande");
+let cancello = document.querySelector('.immagine_principale');
+
+let selectionImmaginiPiccole = document.querySelector(".container_immagini_piccole");
+
 
 
      
-     
-     for ( contatore=0; contatore<=items.length-1; contatore++ ){
-          segnaIndiceImmagine = items[contatore]
-          selectionImmaginiPiccole.insertAdjacentHTML("beforeend", `<div class="immagini_carosello" style="background-image: url('./asset/img/${segnaIndiceImmagine}') ;" ></div>`) 
+for (contatore=0; contatore<=items.length-1; contatore++){
+     segnaIndiceImmagine = items[contatore];
+     selectionImmaginiPiccole.insertAdjacentHTML("beforeend", `<img class="immagini_carosello" src="../asset/img/${segnaIndiceImmagine}">`); 
      }
 
+     
 
-//console.log(cancello)
-//console.log(arrayvar)
-//console.log(selezione) 
+     contatore = 0;
+     segnaIndiceImmagine = items[contatore];
+     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndiceImmagine}') ;" >  <div class="descrizione_immagine"><div class=""><h1>${segnaIndiceTitolo}</h1><span>${segnaIndiceTesto}</span></div></div> </div>`);
+     
+     let selectionGruppoImmagini = document.querySelector(`img[src*="../asset/img/${segnaIndiceImmagine}"]`); 
+     selectionGruppoImmagini.setAttribute("id", "illuminata");
 
-     //console.log(contatore)
-     contatore = 0
-     segnaIndiceImmagine = items[contatore]
-     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndiceImmagine}') ;" >  <div class="descrizione_immagine"><div class=""><h2>${segnaIndiceTitolo}</h2><span>${segnaIndiceTesto}</span></div></div> </div>`)
-     document.getElementById("su").addEventListener("click", frecciaSuperiore) 
-     document.getElementById("giù").addEventListener("click", frecciaInferiore)
+     document.getElementById("su").addEventListener("click", frecciaSuperiore); 
+     document.getElementById("giù").addEventListener("click", frecciaInferiore);
      
 
 function frecciaSuperiore(){
-     //console.log(contatore) 
-     
-     //console.log(contatore)  
+      
      if(contatore<=0){
-          contatore=items.length-1
+          contatore=items.length-1;
      }
      else{
-          contatore=contatore-1
+          contatore=contatore-1;
      }
      
-     segnaIndiceImmagine = items[contatore]
-     segnaIndiceTitolo = title[contatore]
-     segnaIndiceTesto = text[contatore]
-     //console.log(segnaIndice)
-     //console.log(contatore)
-     
-     //console.log(cancello)
-     cancello = document.querySelector('.immagine_principale').remove()
-     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndiceImmagine}') ;" >  <div class="descrizione_immagine"><div class=""><h2>${segnaIndiceTitolo}</h2><span>${segnaIndiceTesto}</span></div></div> </div>`)
-     //console.log(contatore)
-     
+     segnaIndiceImmagine = items[contatore];
+     segnaIndiceTitolo = title[contatore];
+     segnaIndiceTesto = text[contatore];
+    
+     cancello = document.querySelector('.immagine_principale').remove();
+     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndiceImmagine}') ;" >  <div class="descrizione_immagine"><div class=""><h1>${segnaIndiceTitolo}</h1><span>${segnaIndiceTesto}</span></div></div> </div>`);
+
+     let cancelEffeto = document.getElementById("illuminata").removeAttribute('id');
+     selectionGruppoImmagini = document.querySelector(`img[src*="../asset/img/${segnaIndiceImmagine}"]`);
+     selectionGruppoImmagini.setAttribute("id", "illuminata");   
 }
 
 function frecciaInferiore(){
      
      if(contatore>=items.length-1){
-          contatore=0
+          contatore=0;
      }
      else{
-          contatore++
+          contatore++;
      }
      
-     segnaIndiceImmagine = items[contatore]
-     segnaIndiceTitolo = title[contatore]
-     segnaIndiceTesto = text[contatore]
+     segnaIndiceImmagine = items[contatore];
+     segnaIndiceTitolo = title[contatore];
+     segnaIndiceTesto = text[contatore];
 
-     cancello = document.querySelector('.immagine_principale').remove()
-     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndiceImmagine}') ;" >  <div class="descrizione_immagine"><div class=""><h2>${segnaIndiceTitolo}</h2><span>${segnaIndiceTesto}</span></div></div> </div>`)
-     //console.log(contatore)
-     
+     cancello = document.querySelector('.immagine_principale').remove();
+     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndiceImmagine}') ;" >  <div class="descrizione_immagine"><div class=""><h1>${segnaIndiceTitolo}</h1><span>${segnaIndiceTesto}</span></div></div> </div>`);
+
+     let cancelEffeto = document.getElementById("illuminata").removeAttribute('id');
+     selectionGruppoImmagini = document.querySelector(`img[src*="../asset/img/${segnaIndiceImmagine}"]`);
+     selectionGruppoImmagini.setAttribute("id", "illuminata");
 }
 
-//console.log(contatore)
+
 
 
 

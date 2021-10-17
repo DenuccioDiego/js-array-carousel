@@ -2,49 +2,34 @@
 *{
      padding: 0;
      margin: 0;
-     box-sizing: border-box;
-}
+     box-sizing: border-box;   }
 
 .container{
      display: flex;
      height: 500px;
-     width: 1200px;
-     
-}
+     width: 1200px;      }
 
 #container_immagine_grande{
      width: 80%;
-     background-color: beige;
-}
+     background-color: beige;        }
 
 .container_immagini_piccole{
      width: 20%;
      background-color: blueviolet;
-     position: relative;
-}
+     position: relative;    }
 
 .fas{
      text-align: center;
      width: 100%;
-}
-
-.fa-chevron-circle-up{
-       
-}
-
-.fa-chevron-circle-down{
-      
-}
+     font-size: 50px;
+     color: grey;      }
 
 .immagine_principale{
      background-size:cover;
      background-repeat: no-repeat;
      height: 100%;
      background-position: center ;
-     position: relative;
-     
-}
-
+     position: relative;     }
 
 .descrizione_immagine{
      position: absolute;
@@ -52,31 +37,28 @@
      bottom: 0;
      text-align: end;
      padding: 2rem;
-     color: white;
-}
+     color: white;        }
 
 .immagini_carosello{
      height: calc(100% / 5);
-     background-position: center ;
-     filter: brightness(0.55);
-     
-}
+     filter: brightness(0.55);    
+     width: 100%;
+     display: block;    }
 
 #illuminata{
-     filter: brightness(1) ;
-}
+     filter: brightness(1) ; 
+     border: inset 2px white;  }
 
 #su{
-     position: absolute;
-     top: 5%;
-     left: 50%;
-     z-index: 1;
-}
+     top: 5%;     }
 
 #giù{
-     position: absolute;
-     bottom: 5%;
-     left: 50%;
-     z-index: 1;
+     bottom: 5%;    }
 
-}
+.arrows{
+     position: absolute;
+     left: calc(50% - 25px);
+     z-index: 1;   }
+
+.arrows:hover{
+     cursor: pointer;  }
