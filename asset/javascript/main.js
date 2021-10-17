@@ -23,50 +23,65 @@ const text = [
 ];
 
 let contatore = 0
-const segnaIndice = items[contatore]
-const selezione = document.getElementById("container_immagine_grande")
+let segnaIndice = items[contatore]
+let selezione = document.getElementById("container_immagine_grande")
 //console.log(arrayvar)
 //console.log(selezione) 
-console.log(segnaIndice)
 
-document.getElementById("su").addEventListener("click", frecciaSuperiore) 
-document.getElementById("giù").addEventListener("click", frecciaInferiore) 
-selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndice}') ;" ></div>`)
-for(contatore=0 ; contatore<=5 ; contatore++ ){
 
-     document.getElementById("vuoto").setAttribute("id", "immagine_05")
+ 
+
+
+
+     //selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" id="svuoto" style="background-image: url('./asset/img/${segnaIndice}') ;" ></div>`)
+     //console.log(contatore)
+     
     
-
-}
+     document.getElementById("su").addEventListener("click", frecciaSuperiore) 
+     document.getElementById("giù").addEventListener("click", frecciaInferiore)
      
 
 function frecciaSuperiore(){
-     if (items.length=0){
-          items.length=5
+     //console.log(contatore) 
+     
+     //console.log(contatore)  
+     if(contatore<=0){
+          contatore=4
      }
      else{
-          contatore=items.length-2
+          contatore=contatore-1
      }
+     
+     
+     segnaIndice = items[contatore]
+     console.log(segnaIndice)
+     //console.log(contatore)
+     document.getElementById("svuoto").innerHTML=""
+     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndice}') ;" ></div>`)
+     console.log(contatore)
      
 }
 
 function frecciaInferiore(){
-     if (items.length=5){
-          items.length=0
+     
+     if(contatore>=4){
+          contatore=0
      }
      else{
-          contatore=items.length-1
+          contatore++
      }
+     
+     segnaIndice = items[contatore]
+     document.getElementById("svuoto").innerHTML=""
+     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" id="svuoto" style="background-image: url('./asset/img/${segnaIndice}') ;" ></div>`)
+     
+     console.log(contatore)
      
 }
 
-console.log(items.length)    
+//console.log(contatore)
 
      
-
-
-
-
 
 
 
