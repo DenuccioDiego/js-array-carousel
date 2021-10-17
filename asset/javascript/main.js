@@ -1,3 +1,4 @@
+
 const items = [
      '01.jpg',
      '02.jpg',
@@ -60,7 +61,6 @@ selectionGruppoImmagini.setAttribute("id", "illuminata"); //aggiunto id(creato p
 document.getElementById("su").addEventListener("click", frecciaSuperiore); 
 document.getElementById("giù").addEventListener("click", frecciaInferiore);
      
-
 
 function frecciaSuperiore(){ 
       
