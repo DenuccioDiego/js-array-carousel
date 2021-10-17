@@ -25,9 +25,8 @@ const text = [
 
 let contatore = 0;  //contatore che servirà per determinare l'indice di un array
 let segnaIndiceImmagine = items[contatore]; //grazie a questo indice prederemo solamente l'indice esatto di un array esatto 
-let segnaIndiceTitolo = title[contatore];//come sopra
-let segnaIndiceTesto = text[contatore];// come sopra
-
+let segnaIndiceTitolo = title[contatore];//come sopra ma per il titolo
+let segnaIndiceTesto = text[contatore];// come sopra ma per la il testo descrittivo
 
 
 let selezione = document.getElementById("container_immagine_grande");  //selezione container sx tramite id
@@ -36,8 +35,7 @@ let cancello = document.querySelector('.immagine_principale'); //selezione immag
 let selectionImmaginiPiccole = document.querySelector(".container_immagini_piccole"); // selezione container dx tramite classe
 
 
-
-     // questo ciclo servirà a stampare le immagini presenti nell'array 
+// questo ciclo servirà a stampare le immagini presenti nell'array 
 for (contatore=0; contatore<=items.length-1; contatore++){  //il contatore dovrà essere massimo e/o uguale alla lunghezza dell'array-1  
      
      segnaIndiceImmagine = items[contatore]; //richiamo la variabile altrimenti non verrà letto alcun valore
@@ -61,16 +59,7 @@ selectionGruppoImmagini.setAttribute("id", "illuminata"); //aggiunto id(creato p
 document.getElementById("su").addEventListener("click", frecciaSuperiore); 
 document.getElementById("giù").addEventListener("click", frecciaInferiore);
      
-
-function frecciaSuperiore(){ 
-      
-     if(contatore<=0){               //condizione data considerando che il contatore non deve andare al di sotto del numero 0 perchè coincide con la posizione dell'array 
-          contatore=items.length-1;  // ricarichiamo il contatore "scarico" 
-     }
-     else{
-          contatore=contatore-1;    // diminuiamo il contatore considerando che la freccia che punta Su coincide con un decremento dell'indice dell'array
-     }
-     
+function cancellaAndStampa(){
      //richiamo le variabili nella funzione 
      segnaIndiceImmagine = items[contatore];
      segnaIndiceTitolo = title[contatore];
@@ -86,6 +75,19 @@ function frecciaSuperiore(){
      //selezione tramite attributo src che punterà alla stessa immagine che è stata stampata in grande e avrà l'effetto desiderato 
      selectionGruppoImmagini = document.querySelector(`img[src*="../asset/img/${segnaIndiceImmagine}"]`); 
      selectionGruppoImmagini.setAttribute("id", "illuminata");  //id="illuminata" inserito nell'img selezionata l'effeto 
+
+}
+
+function frecciaSuperiore(){ 
+      
+     if(contatore<=0){               //condizione data considerando che il contatore non deve andare al di sotto del numero 0 perchè coincide con la posizione dell'array 
+          contatore=items.length-1;  // ricarichiamo il contatore "scarico" 
+     }
+     else{
+          contatore=contatore-1;    // diminuiamo il contatore considerando che la freccia che punta Su coincide con un decremento dell'indice dell'array
+     }
+
+     cancellaAndStampa() //annido una funzione all'interno di un'altra (vedi sopra per vedere cosa fa)   
 }
 
 function frecciaInferiore(){ 
@@ -97,16 +99,7 @@ function frecciaInferiore(){
           contatore++;
      }
      
-     segnaIndiceImmagine = items[contatore];
-     segnaIndiceTitolo = title[contatore];
-     segnaIndiceTesto = text[contatore];
-
-     cancello = document.querySelector('.immagine_principale').remove();
-     selezione.insertAdjacentHTML("afterbegin", `<div class="immagine_principale" style="background-image: url('./asset/img/${segnaIndiceImmagine}') ;" >  <div class="descrizione_immagine"><div class=""><h1>${segnaIndiceTitolo}</h1><span>${segnaIndiceTesto}</span></div></div> </div>`);
-
-     let cancelEffeto = document.getElementById("illuminata").removeAttribute('id');
-     selectionGruppoImmagini = document.querySelector(`img[src*="../asset/img/${segnaIndiceImmagine}"]`);
-     selectionGruppoImmagini.setAttribute("id", "illuminata");
+     cancellaAndStampa()
 }
 
 
