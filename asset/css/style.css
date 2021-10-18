@@ -16,7 +16,7 @@
 .container_immagini_piccole{
      width: 20%;
      background-color: blueviolet;
-     position: relative;    }
+     position: relative;  }
 
 .fas{
      text-align: center;
@@ -40,7 +40,7 @@
      color: white;        }
 
 .immagini_carosello{
-     height: calc(100% / 5);
+     /* height: calc(100% / 5);  RIMOSSO PERCHè NON RIUSABILE SE CAMBIA LA LUNGHEZZA DELL'ARRAY  , RISOLTO GUARDARE FILE main.js righa43 */
      filter: brightness(0.55);    
      width: 100%;
      display: block;    }

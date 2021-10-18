@@ -37,11 +37,12 @@ let selectionImmaginiPiccole = document.querySelector(".container_immagini_picco
 
 // questo ciclo servirà a stampare le immagini presenti nell'array 
 for (contatore=0; contatore<=items.length-1; contatore++){  //il contatore dovrà essere massimo e/o uguale alla lunghezza dell'array-1  
-     
+    
      segnaIndiceImmagine = items[contatore]; //richiamo la variabile altrimenti non verrà letto alcun valore
-     selectionImmaginiPiccole.insertAdjacentHTML("beforeend", `<img class="immagini_carosello" src="../asset/img/${segnaIndiceImmagine}">`); //inserisco una immagine a ogni giro di ciclo finchè non si arriverà alla condizone di avere tutti gli slot occupati dalle immagini dell'array
+     //inserisco una immagine a ogni giro di ciclo finchè non si arriverà alla condizone di avere tutti gli slot occupati dalle immagini dell'array.Infine aggiungo a tutti i div creati la proprietà height con calc variabile in base alla lunghezza dell'array in modo da rendere tutto il codice "autonomo"
+     selectionImmaginiPiccole.insertAdjacentHTML("beforeend", `<img class="immagini_carosello" src="../asset/img/${segnaIndiceImmagine}" style="height:calc(100% / ${items.length});">`); 
 }
- 
+
 
 contatore = 0; //resetto il contatore che dopo il for sarà 4 quindi lo riportiamo a 0
 segnaIndiceImmagine = items[contatore]; // richiamo la varibile 
